@@ -24,7 +24,7 @@ function App() {
       )
       }
   
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route exact element={<Products />} path='/' />
@@ -34,7 +34,7 @@ function App() {
           <Route exact element={<Likes />} path='/likes' />
           <Route exact element={<Cart />} path='/cart' />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
