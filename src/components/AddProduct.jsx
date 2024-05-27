@@ -27,6 +27,11 @@ const AddProduct = () => {
         <input type="text" placeholder='category' name='category' onChange={(e)=>getValues(e)} />
         <input type="number" placeholder='price' name='price' onChange={(e)=>getValues(e)} />
         <button type="submit">Add </button>
+        {/* <input
+        type="number"
+        value={newItem.price}
+        onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
+      /> */}
 
       </form>
     </div>
