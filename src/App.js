@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import './App.css';
+import Navbar from './components/Navbar';
+import Products from './components/Products';
+import SingleProduct from './components/SingleProduct';
+import AddProduct from './components/AddProduct';
+import Update from './components/Update';
+import Likes from './components/Likes';
+import Cart from './components/Cart';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
+  const {user, loginWithRedirect, isAuthenticated,logout} = useAuth0()
+  console.log(user)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isAuthenticated && <h2>Hello {user.name}</h2>}
+      {isAuthenticated ?(
+        <button onClick={()=>logout()}>Logout</button>
+      ):(
+        
+        <button onClick={()=>loginWithRedirect()}>Login</button>
+      )
+      }
+  
+      {/* <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact element={<Products />} path='/' />
+          <Route exact element={<SingleProduct />} path='/product/:id' />
+          <Route exact element={<AddProduct />} path='/add' />
+          <Route exact element={<Update />} path='/edit/:id' />
+          <Route exact element={<Likes />} path='/likes' />
+          <Route exact element={<Cart />} path='/cart' />
+        </Routes>
+      </BrowserRouter> */}
     </div>
   );
 }
