@@ -12,7 +12,22 @@ export const getAllProducts = createAsyncThunk(
     }
   }
 );
+// export const createUser = createAsyncThunk("createUser", async (data, { rejectWithValue }) => {
+//   const res = await fetch('https://664f80c0ec9b4a4a602f0386.mockapi.io/crud_redux', {
+//       method: 'POST',
+//       headers: {
+//           "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(data)
+//   });
 
+//   try {
+//       const result = await res.json();
+//       return result
+//   } catch (error) {
+//       return rejectWithValue(error)
+//   }
+// })
 export const deleteProduct = createAsyncThunk(
   'deleteProduct',
   async (id, { rejectWithValue }) => {
