@@ -40,3 +40,38 @@ function App() {
 }
 
 export default App;
+
+
+
+// import logo from './logo.svg';
+// // import './App.css';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import Products from './component/Products';
+// import Navbar from './component/Navbar';
+// import SingleProduct from './component/SingleProduct';
+// import AddProduct from './component/AddProduct';
+// import Update from './component/Update';
+// import ProtectedRoute from './component/ProtectedRoute';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <BrowserRouter>
+//           <Navbar />
+//         <Routes>
+//         <Route element={<ProtectedRoute />}>
+//           <Route path="/" element={<Products />} />
+//           {/* Add more protected routes as needed */}
+//         </Route>          <Route path='/product/:id' element={<SingleProduct />} exact />
+          
+//           <Route path='/add' element={<AddProduct />} exact/>
+//           <Route path='/edit/:id' element={<Update />} exact/>
+
+
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+
+// export default App;
